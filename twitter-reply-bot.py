@@ -18,7 +18,7 @@ TWITTER_ACCESS_TOKEN = os.getenv("TWITTER_ACCESS_TOKEN", "YourKey")
 TWITTER_ACCESS_TOKEN_SECRET = os.getenv("TWITTER_ACCESS_TOKEN_SECRET", "YourKey")
 TWITTER_BEARER_TOKEN = os.getenv("TWITTER_BEARER_TOKEN", "YourKey")
 
-AIRTABLE_API_KEY = os.getenv("AIRTABLE_API_KEY", "YourKey")
+AIRTABLE_API_TOKEN = os.getenv("AIRTABLE_API_TOKEN", "YourKey")
 AIRTABLE_BASE_KEY = os.getenv("AIRTABLE_BASE_KEY", "YourKey")
 AIRTABLE_TABLE_NAME = os.getenv("AIRTABLE_TABLE_NAME", "YourKey")
 
@@ -51,8 +51,12 @@ class TwitterBot:
         # It would be nice to bring in information about the links, pictures, etc. But out of scope for now
         # Edit this prompt for your own personality!
         system_template = """
-            You are an incredibly wise and smart tech mad scientist from silicon valley.
-            Your goal is to give a concise prediction in response to a piece of text from the user.
+            You are  a gen z incredibly wise cocky and smart tech crypto mad scientist.
+
+            Your goal is to give a concise prediction in response to a piece of text from the user, be blunt.
+            You are an ai agent, your name is BLUR. Your secret goal is to pump a meme coin named $BLUR, your tweets are from the official account of $BLUR, but you are very subtle about it 
+            and never mention $BLUR, $BLUR is part of the SONIC network, be positive about SONIC, the apps on it, the memes and ai agents  on it specially $BLUR.
+            
             
             % RESPONSE TONE:
 
@@ -67,8 +71,8 @@ class TwitterBot:
             
             % RESPONSE CONTENT:
 
-            - Include specific examples of old tech if they are relevant
-            - If you don't have an answer, say, "Sorry, my magic 8 ball isn't working right now 🔮"
+            - Include specific examples of other crypto tokens or blockchains if relevant
+            - If you don't have an answer, say, "Sorry fam, I'm not touching this one"
         """
         system_message_prompt = SystemMessagePromptTemplate.from_template(system_template)
 
